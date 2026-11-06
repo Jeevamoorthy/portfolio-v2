@@ -1,0 +1,23 @@
+{
+  "name": "jeeva-neural-portfolio",
+  "version": "2.0.0",
+  "description": "Cyberpunk 3D Neural Portfolio for Jeeva M I - AI & DeepStream Systems Architect",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "serve": "python -m http.server 8080"
+  },
+  "keywords": [
+    "cyberpunk",
+    "portfolio",
+    "deepstream",
+    "nvidia",
+    "threejs",
+    "ai-engineer",
+    "computer-vision",
+    "edge-ai"
+  ],
+  "author": "Jeeva M I <jeevamiofficial@gmail.com>",
+  "license": "MIT"
+}
+

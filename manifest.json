@@ -1,0 +1,18 @@
+{
+  "name": "Jeeva M I // AI & DeepStream Systems Architect",
+  "short_name": "Jeeva AI",
+  "description": "High-throughput edge AI pipelines, NVIDIA DeepStream, autonomous LLM agents, and 3D Neural Architecture.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#00f0ff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

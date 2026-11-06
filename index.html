@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JEEVA M I // AI & DEEPSTREAM SYSTEMS ARCHITECT</title>
+  
+  <!-- SEO & OpenGraph Metadata -->
+  <meta name="description" content="Cyberpunk 3D Neural Portfolio of Jeeva M I — AI & DeepStream Systems Architect, Real-Time Edge Video Analytics, TensorRT, YOLO, and Autonomous LLM Agents.">
+  <meta name="keywords" content="Jeeva M I, NVIDIA DeepStream, AI Architect, Computer Vision, TensorRT, YOLO, Edge AI, RAG, Three.js">
+  <meta name="author" content="Jeeva M I">
+  <meta name="theme-color" content="#00f0ff">
+  
+  <meta property="og:title" content="JEEVA M I // AI & DEEPSTREAM SYSTEMS ARCHITECT">
+  <meta property="og:description" content="High-throughput edge AI pipelines with NVIDIA DeepStream, autonomous LLM agent architectures, and 3D Neural Connectome.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon & Web App Manifest -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Cyberpunk Sci-Fi Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Main Cyberpunk Stylesheet -->
+  <link rel="stylesheet" href="css/cyberpunk.css">
+</head>
+<body data-theme="cyan">
+
+  <!-- Custom Cyber Crosshair Cursor -->
+  <div id="cyber-cursor-dot"></div>
+  <div id="cyber-cursor-ring"></div>
+
+  <!-- Ambient Backdrop Overlays & Matrix Canvas -->
+  <div class="cyber-bg-overlay">
+    <div class="cyber-grid"></div>
+    <div class="cyber-scanlines"></div>
+    <div class="cyber-vignette"></div>
+    <canvas id="matrix-rain-canvas" class="matrix-rain-canvas"></canvas>
+  </div>
+
+  <div class="cyber-content-wrapper">
+
+    <!-- ====================================================================
+         HUD TOPBAR / NAVIGATION
+         ==================================================================== -->
+    <header class="hud-navbar">
+      <div class="nav-container">
+        
+        <!-- Brand / Identity -->
+        <a href="#hero" class="nav-brand">
+          <div class="brand-icon">J</div>
+          <div class="brand-meta">
+            <span class="brand-title">JEEVA M I</span>
+            <span class="brand-subtitle">SYS_ARCH // CLEARANCE: OMEGA</span>
+          </div>
+        </a>
+
+        <!-- Live Telemetry Tickers -->
+        <div class="nav-telemetry">
+          <div class="telemetry-item">
+            <span class="pulse-indicator"></span>
+            <span>CORE: <strong class="term-green">STABLE</strong></span>
+          </div>
+          <div class="telemetry-item">
+            <span>FPS: <strong id="hud-fps-counter" class="term-cyan">60 FPS</strong></span>
+          </div>
+          <div class="telemetry-item">
+            <span>LAT: <strong id="hud-latency-counter" class="term-yellow">9.2 ms</strong></span>
+          </div>
+          <div class="telemetry-item">
+            <span>TIME: <strong id="hud-realtime-clock" class="term-white">--:--:--</strong></span>
+          </div>
+        </div>
+
+        <!-- Navigation Links (Bracket alignment protected with nowrap) -->
+        <ul class="nav-links" id="nav-links-menu">
+          <li><a href="#about" class="nav-link"><span class="btn-bracket">[</span><span class="nav-link-text">BIO</span><span class="btn-bracket">]</span></a></li>
+          <li><a href="#projects" class="nav-link"><span class="btn-bracket">[</span><span class="nav-link-text">PROJECTS</span><span class="btn-bracket">]</span></a></li>
+          <li><a href="#skills" class="nav-link"><span class="btn-bracket">[</span><span class="nav-link-text">ARSENAL</span><span class="btn-bracket">]</span></a></li>
+          <li><a href="#experience" class="nav-link"><span class="btn-bracket">[</span><span class="nav-link-text">LOGS</span><span class="btn-bracket">]</span></a></li>
+          <li><a href="#terminal" class="nav-link"><span class="btn-bracket">[</span><span class="nav-link-text">CLI</span><span class="btn-bracket">]</span></a></li>
+          <li><a href="#contact" class="nav-link"><span class="btn-bracket">[</span><span class="nav-link-text">UPLINK</span><span class="btn-bracket">]</span></a></li>
+        </ul>
+
+        <!-- Action Controls: Audio, Drone, Glitch & Theme -->
+        <div class="nav-actions">
+          <!-- Audio Toggle -->
+          <button id="audio-toggle-btn" class="audio-btn" title="Toggle Synthesized SFX">
+            <div class="sound-bars">
+              <span class="sound-bar"></span>
+              <span class="sound-bar"></span>
+              <span class="sound-bar"></span>
+            </div>
+            <span id="audio-status-text">SFX: ACTIVE</span>
+          </button>
+
+          <!-- Ambient Cyber Drone Toggle -->
+          <button id="ambient-toggle-btn" class="ambient-btn" title="Toggle Cyber Ambient Drone">
+            <span class="ambient-icon">📻</span> DRONE
+          </button>
+
+          <!-- System Overdrive Glitch Pulse -->
+          <button id="hud-glitch-btn" class="hud-glitch-btn" title="Trigger System Overdrive Glitch Pulse">
+            ⚡ OVERDRIVE
+          </button>
+
+          <!-- Theme Palette Switcher -->
+          <div class="theme-switch-group" title="Switch Cyberpunk Color Matrix">
+            <button class="theme-btn active" data-theme="cyan" title="Cyber Cyan"></button>
+            <button class="theme-btn" data-theme="matrix" title="Matrix Green"></button>
+            <button class="theme-btn" data-theme="magenta" title="Neon Magenta"></button>
+            <button class="theme-btn" data-theme="amber" title="Solar Amber"></button>
+          </div>
+
+          <!-- Mobile Hamburger -->
+          <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         HERO SECTION: Glitch Typography & 3D Reactive Deforming Human Brain
+         ==================================================================== -->
+    <section id="hero" class="hero-section">
+      
+      <!-- Left Column: Biography & Status -->
+      <div class="hero-content">
+        <div class="hero-status-badge">
+          <span class="pulse-indicator"></span>
+          <span>NEURAL ARCHITECTURE ONLINE // READY FOR DISPATCH</span>
+        </div>
+
+        <h1 class="glitch-title" data-text="JEEVA M I">JEEVA M I</h1>
+        
+        <div class="hero-subtitle">
+          <span class="term-cyan">&gt;</span> AI & DEEPSTREAM SYSTEMS ARCHITECT
+        </div>
+
+        <p class="hero-bio">
+          Engineering high-throughput multi-stream computer vision, real-time edge AI pipelines with NVIDIA DeepStream, autonomous LLM agent architectures, and Graph Neural Networks for predictive intelligence.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="cyber-btn cyber-btn-primary">
+            <span class="btn-bracket">[</span> ACCESS PROJECTS <span class="btn-bracket">]</span>
+          </a>
+          <a href="#contact" class="cyber-btn cyber-btn-secondary">
+            <span class="btn-bracket">[</span> INITIATE UPLINK <span class="btn-bracket">]</span>
+          </a>
+          <a href="mailto:jeevamiofficial@gmail.com" class="cyber-btn cyber-btn-secondary" title="Email Jeeva">
+            <span class="btn-bracket">[</span> TRANSMIT CV <span class="btn-bracket">]</span>
+          </a>
+        </div>
+
+        <!-- Real-world Metrics -->
+        <div class="hero-stats-row">
+          <div class="hero-stat-box">
+            <span class="stat-number accent counter-val" data-target="5" data-suffix="+">0</span>
+            <span class="stat-label">CCTV Streams Live</span>
+          </div>
+          <div class="hero-stat-box">
+            <span class="stat-number accent">NIDAR</span>
+            <span class="stat-label">National Finalist</span>
+          </div>
+          <div class="hero-stat-box">
+            <span class="stat-number accent">NVIDIA</span>
+            <span class="stat-label">DeepStream Cert</span>
+          </div>
+          <div class="hero-stat-box">
+            <span class="stat-number accent counter-val" data-target="99.4" data-suffix="%">0%</span>
+            <span class="stat-label">System Uptime</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 3D REACTIVE DEFORMING & REFORMING HUMAN BRAIN -->
+      <div class="hero-brain-viewport">
+        <!-- 3D Canvas Host -->
+        <div id="brain-canvas-container"></div>
+
+        <!-- Overlaid Cyber HUD Frame -->
+        <div class="brain-hud-frame">
+          <span class="hud-corner tl"></span>
+          <span class="hud-corner tr"></span>
+          <span class="hud-corner bl"></span>
+          <span class="hud-corner br"></span>
+        </div>
+
+        <!-- Instruction Tag -->
+        <div class="brain-instruction-tag">
+          <span>// INTERACTIVE 3D NEURAL CORE: DRAG ROTATE • CLICK DEFORM</span>
+        </div>
+
+        <!-- Brain Interactive Overlay Controls -->
+        <div class="brain-controls-overlay">
+          
+          <div class="brain-btn-group">
+            <button id="btn-brain-pulse" class="hud-btn" title="Send a synaptic photonic wave through connectome">
+              <span class="btn-bracket">[</span> SYNAPTIC PULSE <span class="btn-bracket">]</span>
+            </button>
+            <button id="btn-brain-deform" class="hud-btn" title="Explode particles outward and reform back">
+              <span class="btn-bracket">[</span> DECONSTRUCT / GLITCH <span class="btn-bracket">]</span>
+            </button>
+            <button id="btn-brain-overclock" class="hud-btn" title="Accelerate pulse frequency and lighting">
+              <span class="btn-bracket">[</span> OVERCLOCK CORE <span class="btn-bracket">]</span>
+            </button>
+            <button id="btn-brain-reset" class="hud-btn" title="Normalize receptors">
+              <span class="btn-bracket">[</span> RE-ALIGN <span class="btn-bracket">]</span>
+            </button>
+          </div>
+
+          <!-- Real-time HUD Brain Telemetry -->
+          <div class="brain-telemetry-box">
+            <div class="telemetry-row">
+              <span>RECEPTOR STATUS:</span>
+              <span id="hud-deform-state" class="telemetry-val">SYNTHESIZED // COHERENT</span>
+            </div>
+            <div class="telemetry-row">
+              <span>SYNAPSE NODES:</span>
+              <span class="telemetry-val">7,500 ACTIVE</span>
+            </div>
+            <div class="telemetry-row">
+              <span>FREQUENCY:</span>
+              <span id="hud-freq-val" class="telemetry-val">144.2 Hz</span>
+            </div>
+            <div class="telemetry-row">
+              <span>COHERENCE:</span>
+              <span id="hud-coherence-val" class="telemetry-val">100%</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: BIOMETRIC DOSSIER (ABOUT ME)
+         ==================================================================== -->
+    <section id="about" class="cyber-section">
+      <div class="section-header">
+        <div class="section-tag"><span class="term-cyan">01 //</span> PERSONNEL DOSSIER</div>
+        <h2 class="section-title">NEURAL <span class="neon-word">IDENTITY</span></h2>
+        <p class="section-desc">Classified personnel record and core systems engineering philosophy.</p>
+      </div>
+
+      <div class="dossier-grid">
+        
+        <!-- Left: Biometric ID Card -->
+        <div class="dossier-card">
+          <div class="biometric-header">
+            <div class="biometric-avatar">
+              <!-- Holographic Human Wireframe Brain/Face SVG -->
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <div class="biometric-info">
+              <h3>JEEVA M I</h3>
+              <span class="dossier-id">SYS_ID: 2023-BTECH-AIDS-042</span>
+            </div>
+          </div>
+
+          <div class="dossier-field">
+            <div class="dossier-label">PRIMARY DISCIPLINE</div>
+            <div class="dossier-val accent">B.Tech in Artificial Intelligence and Data Science</div>
+          </div>
+
+          <div class="dossier-field">
+            <div class="dossier-label">ACADEMIC INSTITUTION</div>
+            <div class="dossier-val">Bannari Amman Institute of Technology, Tamil Nadu (2023 – 2027)</div>
+          </div>
+
+          <div class="dossier-field">
+            <div class="dossier-label">CURRENT ACTIVE ROLE</div>
+            <div class="dossier-val term-green">AI Developer Intern @ Creozen (Sep 2025 – Present)</div>
+          </div>
+
+          <div class="dossier-field">
+            <div class="dossier-label">PRIOR POSTING</div>
+            <div class="dossier-val">AIML Intern @ Sankara Eye Hospital (Mar 2025 – Apr 2025)</div>
+          </div>
+
+          <div class="dossier-field">
+            <div class="dossier-label">GEOGRAPHIC COORDINATES</div>
+            <div class="dossier-val">Coimbatore, Tamil Nadu, India [11.0168° N, 76.9558° E]</div>
+          </div>
+        </div>
+
+        <!-- Right: Vision & Engineering Pillars -->
+        <div class="dossier-card vision-card">
+          <div class="vision-text">
+            <div class="section-tag"><span class="term-yellow">CORE OBJECTIVE //</span> REAL-WORLD HIGH-THROUGHPUT AI</div>
+            <p>
+              I bridge the gap between heavy theoretical neural networks and microsecond-level edge deployment. From building real-time multi-stream CCTV computer vision running on NVIDIA hardware to crafting autonomous GenAI agents with Retrieval-Augmented Generation, my mission is high-reliability intelligence at scale.
+            </p>
+            <p>
+              Recognized nationally as a Finalist in the NIDAR National Innovation Challenge by the Drone Federation of India and Government of India for aerial surveillance AI, and certified by NVIDIA in building real-time video AI pipelines with DeepStream.
+            </p>
+          </div>
+
+          <!-- 4 Core Pillars -->
+          <div class="pillars-grid">
+            <div class="pillar-box">
+              <div class="pillar-title">EDGE COMPUTER VISION</div>
+              <div class="pillar-desc">NVIDIA DeepStream, TensorRT, PeopleNet, VehicleCamNet, YOLOv8/v10 for multi-camera streams.</div>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-title">GENAI & RAG WORKFLOWS</div>
+              <div class="pillar-desc">LLM orchestration, Model Context Protocol (MCP), semantic retrieval for automated enterprise workflows.</div>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-title">GRAPH NEURAL NETS</div>
+              <div class="pillar-desc">PyTorch Geometric & Louvain community clustering for fraud ring and complex relational detection.</div>
+            </div>
+            <div class="pillar-box">
+              <div class="pillar-title">LOW-LATENCY SYSTEMS</div>
+              <div class="pillar-desc">FastAPI, OpenCV hardware decoding, Python/C++ pipeline optimization for sub-12ms inference.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: CLASSIFIED ENGINEERING PROJECTS
+         ==================================================================== -->
+    <section id="projects" class="cyber-section">
+      <div class="section-header">
+        <div class="section-tag"><span class="term-cyan">02 //</span> CLASSIFIED OPERATIONS</div>
+        <h2 class="section-title">ENGINEERING <span class="neon-word">PROJECTS</span></h2>
+        <p class="section-desc">Production-grade AI systems, video pipelines, and autonomous architectures. Hover cards to pulse corresponding brain lobes.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="project-filters">
+        <button class="filter-tab active" data-filter="all"><span class="btn-bracket">[</span> ALL SYSTEMS <span class="btn-bracket">]</span></button>
+        <button class="filter-tab" data-filter="deepstream"><span class="btn-bracket">[</span> NVIDIA DEEPSTREAM <span class="btn-bracket">]</span></button>
+        <button class="filter-tab" data-filter="cv"><span class="btn-bracket">[</span> COMPUTER VISION <span class="btn-bracket">]</span></button>
+        <button class="filter-tab" data-filter="genai"><span class="btn-bracket">[</span> GENAI & RAG <span class="btn-bracket">]</span></button>
+        <button class="filter-tab" data-filter="gnn"><span class="btn-bracket">[</span> GRAPH AI <span class="btn-bracket">]</span></button>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: Proposera AI -->
+        <div class="project-card" data-category="genai" data-brain-region="frontal">
+          <div class="card-top">
+            <span class="project-badge">GENAI / RAG / STREAMLIT</span>
+            <span class="project-index">01</span>
+          </div>
+
+          <div>
+            <h3 class="project-title">Proposera AI – Autonomous RFP Engineering System</h3>
+            <div class="project-tagline">// Autonomous Proposal Generation Workflow</div>
+          </div>
+
+          <p class="project-summary">
+            Architected an LLM-powered autonomous proposal generation system utilizing Retrieval-Augmented Generation (RAG) to ingest complex RFP documentation and auto-synthesize tailored technical proposals.
+          </p>
+
+          <ul class="project-highlights">
+            <li>Designed an intuitive proposal generation pipeline simplifying complex enterprise RFPs.</li>
+            <li>Built an interactive Streamlit HUD dashboard emphasizing workflow clarity and rapid export.</li>
+            <li>Integrated context-aware citation and compliance verification rules.</li>
+          </ul>
+
+          <div class="project-tags">
+            <span class="tag-chip">LLM</span>
+            <span class="tag-chip">RAG</span>
+            <span class="tag-chip">Streamlit</span>
+            <span class="tag-chip">FastAPI</span>
+            <span class="tag-chip">MCP</span>
+            <span class="tag-chip">Python</span>
+          </div>
+
+          <div class="card-footer">
+            <button class="cyber-btn cyber-btn-secondary open-project-modal" data-project="proposera">
+              <span class="btn-bracket">[</span> SYSTEM SPECS <span class="btn-bracket">]</span>
+            </button>
+            <span class="term-mono term-green">● STATUS: OPERATIONAL</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Multi-Stream CCTV Monitoring -->
+        <div class="project-card" data-category="deepstream cv" data-brain-region="stem">
+          <div class="card-top">
+            <span class="project-badge">NVIDIA DEEPSTREAM / EDGE CV</span>
+            <span class="project-index">02</span>
+          </div>
+
+          <div>
+            <h3 class="project-title">Multi-Stream CCTV Monitoring System</h3>
+            <div class="project-tagline">// 5 Simultaneous High-Resolution Feeds</div>
+          </div>
+
+          <p class="project-summary">
+            Engineered an edge-accelerated real-time multi-stream monitoring platform via NVIDIA DeepStream SDK capable of parsing and analyzing 5 high-definition CCTV camera feeds simultaneously with ultra-low latency.
+          </p>
+
+          <ul class="project-highlights">
+            <li>Deployed PeopleNet and VehicleCamNet TensorRT models for real-time human and vehicle analytics.</li>
+            <li>Dramatically reduced inference latency through NVDEC hardware video decoding buffers.</li>
+            <li>Optimized operational visibility and anomaly alert workflows for real-time observation rooms.</li>
+          </ul>
+
+          <div class="project-tags">
+            <span class="tag-chip">NVIDIA DeepStream</span>
+            <span class="tag-chip">TensorRT</span>
+            <span class="tag-chip">PeopleNet</span>
+            <span class="tag-chip">VehicleCamNet</span>
+            <span class="tag-chip">OpenCV</span>
+            <span class="tag-chip">Python/C++</span>
+          </div>
+
+          <div class="card-footer">
+            <button class="cyber-btn cyber-btn-secondary open-project-modal" data-project="cctv">
+              <span class="btn-bracket">[</span> SYSTEM SPECS <span class="btn-bracket">]</span>
+            </button>
+            <span class="term-mono term-cyan">● LATENCY: 8.4ms</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Drone Human Detection System -->
+        <div class="project-card" data-category="cv" data-brain-region="visual">
+          <div class="card-top">
+            <span class="project-badge">NIDAR NATIONAL FINALIST // YOLO</span>
+            <span class="project-index">03</span>
+          </div>
+
+          <div>
+            <h3 class="project-title">Drone Human Detection System</h3>
+            <div class="project-tagline">// Aerial Search & Rescue Surveillance</div>
+          </div>
+
+          <p class="project-summary">
+            National Finalist project in the NIDAR National Innovation Challenge by the Drone Federation of India & Govt of India. Engineered an aerial human detection engine using fine-tuned YOLO for drone-based surveillance.
+          </p>
+
+          <ul class="project-highlights">
+            <li>Achieved resilient detection accuracy from high-altitude oblique drone angles.</li>
+            <li>Optimized motion stabilization to prevent false positives from rotor vibration and wind drift.</li>
+            <li>Explored practical tactical surveillance workflows and real-time visual analytics streaming.</li>
+          </ul>
+
+          <div class="project-tags">
+            <span class="tag-chip">YOLO</span>
+            <span class="tag-chip">Computer Vision</span>
+            <span class="tag-chip">PyTorch</span>
+            <span class="tag-chip">OpenCV</span>
+            <span class="tag-chip">Aerial Surveillance</span>
+          </div>
+
+          <div class="card-footer">
+            <button class="cyber-btn cyber-btn-secondary open-project-modal" data-project="drone">
+              <span class="btn-bracket">[</span> SYSTEM SPECS <span class="btn-bracket">]</span>
+            </button>
+            <span class="term-mono term-yellow">★ NATIONAL FINALIST</span>
+          </div>
+        </div>
+
+        <!-- Project 4: MuleNet -->
+        <div class="project-card" data-category="gnn" data-brain-region="temporal">
+          <div class="card-top">
+            <span class="project-badge">GRAPH NEURAL NETWORKS / FINTECH</span>
+            <span class="project-index">04</span>
+          </div>
+
+          <div>
+            <h3 class="project-title">MuleNet – GNN Fraud Ring Detection</h3>
+            <div class="project-tagline">// Relational Financial Crime Defense</div>
+          </div>
+
+          <p class="project-summary">
+            Developed a cutting-edge financial fraud ring detection engine using Graph Neural Networks (GNN) and community detection algorithms to expose hidden money-mule laundering rings across complex transaction networks.
+          </p>
+
+          <ul class="project-highlights">
+            <li>Applied Graph Convolutional Networks (GCN) to capture topological financial anomalies.</li>
+            <li>Implemented Louvain community clustering to unmask synchronized mule syndicates in real time.</li>
+            <li>Significantly enhanced analytical visibility and interpretability for fraud monitoring teams.</li>
+          </ul>
+
+          <div class="project-tags">
+            <span class="tag-chip">PyTorch Geometric</span>
+            <span class="tag-chip">GNN</span>
+            <span class="tag-chip">NetworkX</span>
+            <span class="tag-chip">Louvain Algorithm</span>
+            <span class="tag-chip">Python</span>
+          </div>
+
+          <div class="card-footer">
+            <button class="cyber-btn cyber-btn-secondary open-project-modal" data-project="mulenet">
+              <span class="btn-bracket">[</span> SYSTEM SPECS <span class="btn-bracket">]</span>
+            </button>
+            <span class="term-mono term-magenta">● TOPOLOGY: ACTIVE</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: SYNAPTIC ARSENAL (SKILLS MATRIX)
+         ==================================================================== -->
+    <section id="skills" class="cyber-section">
+      <div class="section-header">
+        <div class="section-tag"><span class="term-cyan">03 //</span> CAPABILITY MATRIX</div>
+        <h2 class="section-title">SYNAPTIC <span class="neon-word">ARSENAL</span></h2>
+        <p class="section-desc">Technical proficiencies, frameworks, hardware acceleration SDKs, and engineering workflows.</p>
+      </div>
+
+      <div class="skills-container">
+        
+        <!-- Category 1: AI & Deep Learning -->
+        <div class="skill-category-card">
+          <div class="cat-header">
+            <div class="cat-icon">🧠</div>
+            <h3 class="cat-title">AI & DEEP LEARNING</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-node" data-brain-region="frontal">
+              <div class="skill-meta">
+                <span class="skill-name">Computer Vision & CNN</span>
+                <span class="skill-level">95%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="visual">
+              <div class="skill-meta">
+                <span class="skill-name">YOLO (Object Detection)</span>
+                <span class="skill-level">96%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="temporal">
+              <div class="skill-meta">
+                <span class="skill-name">Graph Neural Networks (GNN)</span>
+                <span class="skill-level">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="frontal">
+              <div class="skill-meta">
+                <span class="skill-name">Transformers & OCR</span>
+                <span class="skill-level">90%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Edge & Frameworks -->
+        <div class="skill-category-card">
+          <div class="cat-header">
+            <div class="cat-icon">⚡</div>
+            <h3 class="cat-title">FRAMEWORKS & EDGE</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-node" data-brain-region="stem">
+              <div class="skill-meta">
+                <span class="skill-name">NVIDIA DeepStream SDK</span>
+                <span class="skill-level">94%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="stem">
+              <div class="skill-meta">
+                <span class="skill-name">PyTorch & TensorFlow</span>
+                <span class="skill-level">92%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="visual">
+              <div class="skill-meta">
+                <span class="skill-name">OpenCV (Real-time Vision)</span>
+                <span class="skill-level">95%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="temporal">
+              <div class="skill-meta">
+                <span class="skill-name">FastAPI, Flask & Streamlit</span>
+                <span class="skill-level">90%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: NLP & Generative AI -->
+        <div class="skill-category-card">
+          <div class="cat-header">
+            <div class="cat-icon">🔮</div>
+            <h3 class="cat-title">NLP & GENAI</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-node" data-brain-region="frontal">
+              <div class="skill-meta">
+                <span class="skill-name">Large Language Models (LLM)</span>
+                <span class="skill-level">92%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="frontal">
+              <div class="skill-meta">
+                <span class="skill-name">RAG (Retrieval-Augmented Gen)</span>
+                <span class="skill-level">94%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="temporal">
+              <div class="skill-meta">
+                <span class="skill-name">Model Context Protocol (MCP)</span>
+                <span class="skill-level">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-node" data-brain-region="temporal">
+              <div class="skill-meta">
+                <span class="skill-name">STT & TTS Pipelines</span>
+                <span class="skill-level">85%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Programming Languages -->
+        <div class="skill-category-card">
+          <div class="cat-header">
+            <div class="cat-icon">💻</div>
+            <h3 class="cat-title">PROGRAMMING CORE</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">Python (Advanced)</span>
+                <span class="skill-level">96%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 96%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">C & C++</span>
+                <span class="skill-level">86%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">Java</span>
+                <span class="skill-level">82%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">JavaScript & Backend Systems</span>
+                <span class="skill-level">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 5: AI Tools & Modern Workflow -->
+        <div class="skill-category-card">
+          <div class="cat-header">
+            <div class="cat-icon">🛠️</div>
+            <h3 class="cat-title">AI WORKFLOWS & IDEs</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">Claude Code IDE & Antigravity</span>
+                <span class="skill-level">95%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">GitHub Copilot & Codex</span>
+                <span class="skill-level">94%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 94%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">Kimi Code</span>
+                <span class="skill-level">88%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">Rapid Feature Prototyping</span>
+                <span class="skill-level">92%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill accent" style="width: 92%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 6: Databases & Storage -->
+        <div class="skill-category-card">
+          <div class="cat-header">
+            <div class="cat-icon">🗄️</div>
+            <h3 class="cat-title">DATABASES & STORAGE</h3>
+          </div>
+          <div class="skills-list">
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">MySQL</span>
+                <span class="skill-level">90%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-level">86%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">SQLite & Vector DBs</span>
+                <span class="skill-level">89%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 89%;"></div></div>
+            </div>
+            <div class="skill-node">
+              <div class="skill-meta">
+                <span class="skill-name">Data Structures & Query Tuning</span>
+                <span class="skill-level">92%</span>
+              </div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: MISSION LOGS (EXPERIENCE & ACCOLADES)
+         ==================================================================== -->
+    <section id="experience" class="cyber-section">
+      <div class="section-header">
+        <div class="section-tag"><span class="term-cyan">04 //</span> DEPLOYMENT RECORD</div>
+        <h2 class="section-title">MISSION <span class="neon-word">LOGS</span></h2>
+        <p class="section-desc">Chronological trajectory of industry internships and national awards.</p>
+      </div>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+
+        <!-- Role 1: Creozen -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <h3 class="timeline-role">AI Developer Intern</h3>
+            <div class="timeline-company">
+              <span>CREOZEN</span>
+              <span class="timeline-period">SEP 2025 – PRESENT</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built real-time people counting and crowd analytics systems using neural network detection models and OpenCV.</li>
+              <li>Engineered AI-assisted development workflows and rapid feature prototyping for real-world monitoring applications.</li>
+              <li>Collaborated on improving usability, analytics visibility, and user-focused monitoring experiences.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 2: Sankara Eye Hospital -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <h3 class="timeline-role">AIML Intern</h3>
+            <div class="timeline-company">
+              <span>SANKARA EYE HOSPITAL</span>
+              <span class="timeline-period">MAR 2025 – APR 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Engineered a real-time multi-stream monitoring system using NVIDIA DeepStream SDK for processing 5 CCTV feeds simultaneously.</li>
+              <li>Improved operational visibility and monitoring workflows using PeopleNet and VehicleCamNet models for people and vehicle analytics.</li>
+              <li>Optimized system responsiveness and usability for real-time observation environments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Role 3: Academic Degree -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <h3 class="timeline-role">B.Tech in Artificial Intelligence and Data Science</h3>
+            <div class="timeline-company">
+              <span>BANNARI AMMAN INSTITUTE OF TECHNOLOGY, TAMIL NADU</span>
+              <span class="timeline-period">2023 – 2027</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Relevant Coursework: Machine Learning, Deep Learning, Computer Vision, Neural Networks, NLP, Backend Systems, Data Structures.</li>
+              <li>Focus on edge inference optimization, hardware-accelerated video analytics, and autonomous multi-agent systems.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Honors & Certifications Grid -->
+      <div class="honors-grid">
+        
+        <!-- NIDAR Finalist -->
+        <div class="honor-card">
+          <div class="honor-icon">🏆</div>
+          <div>
+            <h4 class="honor-title">Finalist – NIDAR National Innovation Challenge</h4>
+            <div class="honor-issuer">DRONE FEDERATION OF INDIA & GOVERNMENT OF INDIA</div>
+            <p class="honor-desc">
+              Recognized as a national finalist for engineering an aerial human detection surveillance system utilizing high-altitude YOLO detection models.
+            </p>
+          </div>
+        </div>
+
+        <!-- NVIDIA Certified -->
+        <div class="honor-card nvidia">
+          <div class="honor-icon">⚡</div>
+          <div>
+            <h4 class="honor-title">NVIDIA Certified – Building Real-Time Video AI Applications</h4>
+            <div class="honor-issuer">NVIDIA DEEPSTREAM SDK & TENSORRT</div>
+            <p class="honor-desc">
+              Official industry certification validating expertise in multi-camera video analytics, hardware decoding acceleration, and TensorRT inference pipeline architecture.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: INTERACTIVE CYBERPUNK TERMINAL (CLI)
+         ==================================================================== -->
+    <section id="terminal" class="cyber-section">
+      <div class="section-header">
+        <div class="section-tag"><span class="term-cyan">05 //</span> DIRECT NETRUNNER CONSOLE</div>
+        <h2 class="section-title">NEURAL <span class="neon-word">SHELL</span></h2>
+        <p class="section-desc">Interactive CLI. Type commands to trigger 3D brain deformation, inspect hardware telemetry, switch themes, or run matrix streams.</p>
+      </div>
+
+      <div class="terminal-window" id="cyber-terminal">
+        <div class="terminal-header">
+          <div class="terminal-title">
+            <span class="term-cyan">SYS_CONSOLE:</span> /dev/neural_link_tty0 [AUTHENTICATED]
+          </div>
+          <div class="terminal-buttons">
+            <span class="term-btn red"></span>
+            <span class="term-btn yellow"></span>
+            <span class="term-btn green"></span>
+          </div>
+        </div>
+
+        <div class="terminal-body">
+          <div class="terminal-output"></div>
+          <div class="terminal-input-row">
+            <span class="term-prompt">jeeva@neural-core:~$</span>
+            <input type="text" class="terminal-input" placeholder="type 'help', 'deform', 'overclock', 'projects', 'deepstream'..." autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: NEURAL UPLINK (CONTACT SECTION)
+         ==================================================================== -->
+    <section id="contact" class="cyber-section">
+      <div class="section-header">
+        <div class="section-tag"><span class="term-cyan">06 //</span> ENCRYPTED TRANSMISSION</div>
+        <h2 class="section-title">NEURAL <span class="neon-word">UPLINK</span></h2>
+        <p class="section-desc">Initiate high-priority communications or transmit project briefs directly.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Channels & Coordinates -->
+        <div class="contact-channels">
+          
+          <!-- Email Card -->
+          <div class="channel-card">
+            <div class="channel-info">
+              <div class="channel-icon">✉</div>
+              <div>
+                <div class="channel-label">ELECTRONIC DISPATCH</div>
+                <div class="channel-val">jeevamiofficial@gmail.com</div>
+              </div>
+            </div>
+            <button class="copy-btn copy-trigger" data-copy="jeevamiofficial@gmail.com">
+              <span class="btn-bracket">[</span> COPY <span class="btn-bracket">]</span>
+            </button>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <div class="channel-card">
+            <div class="channel-info">
+              <div class="channel-icon">in</div>
+              <div>
+                <div class="channel-label">PROFESSIONAL NETWORK</div>
+                <div class="channel-val">linkedin.com/in/jeeva-m-i</div>
+              </div>
+            </div>
+            <a href="https://linkedin.com/in/jeeva-m-i" target="_blank" class="copy-btn">
+              <span class="btn-bracket">[</span> OPEN <span class="btn-bracket">]</span>
+            </a>
+          </div>
+
+          <!-- GitHub Card -->
+          <div class="channel-card">
+            <div class="channel-info">
+              <div class="channel-icon">🐙</div>
+              <div>
+                <div class="channel-label">CODE REPOSITORY</div>
+                <div class="channel-val">github.com/Jeevamoorthy</div>
+              </div>
+            </div>
+            <a href="https://github.com/Jeevamoorthy" target="_blank" class="copy-btn">
+              <span class="btn-bracket">[</span> OPEN <span class="btn-bracket">]</span>
+            </a>
+          </div>
+
+          <!-- Location -->
+          <div class="channel-card">
+            <div class="channel-info">
+              <div class="channel-icon">📍</div>
+              <div>
+                <div class="channel-label">OPERATIONS BASE</div>
+                <div class="channel-val">Coimbatore, Tamil Nadu, India</div>
+              </div>
+            </div>
+            <span class="term-mono term-cyan">[ACTIVE]</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="cyber-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <span>© 2026 JEEVA M I // DESIGNED WITH CYBERPUNK 3D NEURAL COHERENCE</span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/Jeevamoorthy" target="_blank" class="social-link">[ GITHUB ]</a>
+          <a href="https://linkedin.com/in/jeeva-m-i" target="_blank" class="social-link">[ LINKEDIN ]</a>
+          <a href="mailto:jeevamiofficial@gmail.com" class="social-link">[ EMAIL ]</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- .cyber-content-wrapper -->
+
+  <!-- ====================================================================
+       HOLOGRAPHIC PROJECT MODAL
+       ==================================================================== -->
+  <div id="project-modal" class="cyber-modal-overlay">
+    <div class="cyber-modal-window">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div id="modal-dynamic-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Cyber Quick-HUD -->
+  <div class="cyber-floating-hud" aria-label="Quick Navigation Controls">
+    <button id="float-top-btn" class="float-hud-btn" title="Scroll to Top">▲ TOP</button>
+    <button id="float-glitch-btn" class="float-hud-btn danger" title="Trigger Overdrive Glitch">⚡ GLITCH</button>
+    <button id="float-matrix-btn" class="float-hud-btn" title="Toggle Matrix Rain">🟢 MATRIX</button>
+    <button id="float-ambient-btn" class="float-hud-btn" title="Toggle Ambient Drone">📻 DRONE</button>
+    <button id="float-cli-btn" class="float-hud-btn" title="Jump to Netrunner Terminal">💻 CLI</button>
+  </div>
+
+  <!-- Cyber Toast Notification -->
+  <div id="cyber-toast" class="cyber-toast"></div>
+
+  <!-- Vendor Three.js & Controls (Local Bundled + CDN Fallback) -->
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/OrbitControls.js"></script>
+
+  <!-- Application Engine Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/brain3d.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

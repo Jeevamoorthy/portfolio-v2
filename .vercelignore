@@ -1,0 +1,7 @@
+.git
+.gitignore
+*.bat
+*.ps1
+.DS_Store
+Thumbs.db
+
